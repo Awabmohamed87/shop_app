@@ -157,7 +157,11 @@ class _AuthCardState extends State<AuthCard>
       }
     } on HttpException {
       print('');
-    } catch (e) {}
+    } catch (e) {
+      setState(() {
+        _isLoading = false;
+      });
+    }
     setState(() {
       _isLoading = false;
     });

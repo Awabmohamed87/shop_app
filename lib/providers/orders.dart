@@ -22,7 +22,9 @@ class Orders with ChangeNotifier {
   String? authToken;
   String? userId;
 
-  getDate(String id, String token, List<OrderItem> orders) {
+  Orders({required this.authToken, required this.userId});
+
+  getData(String id, String token, List<OrderItem> orders) {
     userId = id;
     authToken = token;
     _orders = orders;
@@ -64,6 +66,7 @@ class Orders with ChangeNotifier {
       _orders = retrievedOrders.reversed.toList();
       notifyListeners();
     } catch (error) {
+      print(error);
       rethrow;
     }
   }

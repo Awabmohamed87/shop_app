@@ -23,8 +23,8 @@ class Auth with ChangeNotifier {
     return null;
   }
 
-  String get userId {
-    return _userId!;
+  String? get userId {
+    return _userId;
   }
 
   _authinticate(String email, String password, String urlSegment) async {

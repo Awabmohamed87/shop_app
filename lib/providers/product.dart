@@ -26,6 +26,7 @@ class Product with ChangeNotifier {
   toggleFavouriteStatus(String token, String userId) async {
     bool oldStatus = isFavourite;
     isFavourite = !isFavourite;
+    print(isFavourite);
     notifyListeners();
     final url =
         'https://shop-7d800-default-rtdb.europe-west1.firebasedatabase.app/userFavourites/$userId/$id.json?auth=$token';
